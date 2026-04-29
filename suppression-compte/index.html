@@ -1,27 +1,138 @@
-<section id="suppression-compte">
-  <h2>Demander la suppression de votre compte</h2>
-  <p>
-    Pour demander la suppression de votre compte Mon Herboriste et des données associées,
-    utilisez le bouton ci-dessous.
-  </p>
+<section id="suppression-compte" class="account-delete-section">
+  <div class="account-delete-card">
+    <span class="account-delete-badge">Gestion du compte</span>
 
-  <p>
+    <h2>Demander la suppression de votre compte</h2>
+
+    <p class="account-delete-intro">
+      Vous pouvez demander la suppression de votre compte Mon Herboriste ainsi que
+      des données associées en utilisant le bouton ci-dessous.
+    </p>
+
     <a
+      class="account-delete-button"
       href="mailto:valdaxytpro@gmail.com?subject=Demande%20de%20suppression%20de%20compte%20Mon%20Herboriste&body=Bonjour,%0A%0AJe%20souhaite%20demander%20la%20suppression%20de%20mon%20compte%20Mon%20Herboriste%20et%20des%20donn%C3%A9es%20associ%C3%A9es.%0A%0AAdresse%20e-mail%20du%20compte%20:%20%0AInformations%20compl%C3%A9mentaires%20:%20%0A"
     >
       Demander la suppression par e-mail
     </a>
-  </p>
 
-  <p>
-    Vous pouvez aussi nous écrire directement à :
-    <a href="mailto:valdaxytpro@gmail.com">valdaxytpro@gmail.com</a>
-  </p>
+    <p class="account-delete-contact">
+      Vous pouvez aussi nous écrire directement à :
+      <a href="mailto:valdaxytpro@gmail.com">valdaxytpro@gmail.com</a>
+    </p>
 
-  <h3>Données concernées</h3>
-  <p>
-    La suppression porte sur le compte utilisateur et les données associées, sous réserve
-    des obligations légales ou de sécurité pouvant imposer une conservation limitée de
-    certaines informations.
-  </p>
+    <div class="account-delete-info">
+      <h3>Données concernées</h3>
+      <p>
+        La suppression porte sur le compte utilisateur et les données associées,
+        sous réserve des obligations légales ou de sécurité pouvant imposer une
+        conservation limitée de certaines informations.
+      </p>
+    </div>
+  </div>
 </section>
+
+<style>
+  .account-delete-section {
+    max-width: 820px;
+    margin: 48px auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .account-delete-card {
+    background: linear-gradient(135deg, #ffffff, #f6fbf7);
+    border: 1px solid #dfeee3;
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 16px 40px rgba(32, 72, 45, 0.08);
+  }
+
+  .account-delete-badge {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #e8f5ec;
+    color: #2f6b3f;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .account-delete-card h2 {
+    margin: 0 0 14px;
+    color: #203c2a;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.15;
+  }
+
+  .account-delete-intro {
+    margin: 0 0 28px;
+    color: #4f5f55;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .account-delete-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 14px;
+    background: #2f6b3f;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 10px 24px rgba(47, 107, 63, 0.22);
+  }
+
+  .account-delete-button:hover {
+    background: #255633;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(47, 107, 63, 0.28);
+  }
+
+  .account-delete-contact {
+    margin: 24px 0 0;
+    color: #5c6b62;
+    line-height: 1.6;
+  }
+
+  .account-delete-contact a {
+    color: #2f6b3f;
+    font-weight: 600;
+  }
+
+  .account-delete-info {
+    margin-top: 32px;
+    padding: 22px;
+    border-radius: 18px;
+    background: #f3f8f4;
+    border: 1px solid #dcebdd;
+  }
+
+  .account-delete-info h3 {
+    margin: 0 0 10px;
+    color: #203c2a;
+    font-size: 1.2rem;
+  }
+
+  .account-delete-info p {
+    margin: 0;
+    color: #53635a;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .account-delete-card {
+      padding: 26px 22px;
+      border-radius: 20px;
+    }
+
+    .account-delete-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
