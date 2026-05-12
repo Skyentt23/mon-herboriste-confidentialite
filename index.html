@@ -7,15 +7,15 @@
 
   <style>
     :root {
-      --bg: #f6f3ec;
+      --bg: #f6f3ea;
       --card: #ffffff;
-      --text-strong: #26352b;
-      --text-body: #4c5a50;
-      --muted: #7c8a80;
-      --green: #5f7f62;
-      --green-soft: #e8efe6;
-      --border: #e4ded2;
-      --shadow: 0 18px 45px rgba(43, 61, 49, 0.12);
+      --primary: #4f6f52;
+      --primary-dark: #2f4a34;
+      --accent: #d8c7a3;
+      --text-strong: #253026;
+      --text-body: #4d5a4f;
+      --border: #e7dfcf;
+      --shadow: 0 18px 45px rgba(47, 74, 52, 0.12);
       --radius: 24px;
     }
 
@@ -27,21 +27,19 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(124, 159, 119, 0.18), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(194, 170, 124, 0.18), transparent 34%),
-        var(--bg);
+        radial-gradient(circle at top left, rgba(216, 199, 163, 0.45), transparent 35%),
+        linear-gradient(180deg, #f8f5ec 0%, #eef2e8 100%);
       color: var(--text-body);
       line-height: 1.7;
     }
 
     .page {
-      width: 100%;
       min-height: 100vh;
-      padding: 48px 18px;
+      padding: 48px 20px;
     }
 
     .container {
-      max-width: 920px;
+      max-width: 980px;
       margin: 0 auto;
     }
 
@@ -51,13 +49,15 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
+      backdrop-filter: blur(10px);
     }
 
-    .header {
-      padding: 42px 42px 30px;
+    .hero {
+      position: relative;
+      padding: 42px 42px 34px;
       background:
-        linear-gradient(135deg, rgba(95, 127, 98, 0.12), rgba(255, 255, 255, 0)),
-        var(--card);
+        linear-gradient(135deg, rgba(79, 111, 82, 0.12), rgba(216, 199, 163, 0.28)),
+        #ffffff;
       border-bottom: 1px solid var(--border);
     }
 
@@ -66,10 +66,10 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 14px;
-      padding: 7px 13px;
+      padding: 7px 12px;
       border-radius: 999px;
-      background: var(--green-soft);
-      color: var(--green);
+      background: rgba(79, 111, 82, 0.1);
+      color: var(--primary-dark);
       font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.04em;
@@ -81,98 +81,115 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--primary);
     }
 
     h1 {
       margin: 0;
       color: var(--text-strong);
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
       letter-spacing: -0.04em;
     }
 
     .subtitle {
-      margin: 12px 0 0;
-      color: var(--muted);
+      margin: 14px 0 0;
+      color: var(--text-body);
       font-size: 1rem;
     }
 
     .content {
-      padding: 36px 42px 44px;
+      padding: 34px 42px 44px;
     }
 
     .section {
       position: relative;
-      padding: 0 0 28px 24px;
-      margin-bottom: 28px;
-      border-left: 2px solid var(--green-soft);
+      padding: 24px 0 24px 28px;
+      border-bottom: 1px solid var(--border);
     }
 
     .section:last-child {
-      margin-bottom: 0;
+      border-bottom: none;
       padding-bottom: 0;
     }
 
     .section::before {
       content: "";
       position: absolute;
-      left: -6px;
-      top: 6px;
-      width: 10px;
-      height: 10px;
+      left: 0;
+      top: 30px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 6px var(--green-soft);
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(216, 199, 163, 0.24);
     }
 
     h2 {
       margin: 0 0 10px;
-      color: var(--text-strong);
-      font-size: 1.15rem;
+      color: var(--primary-dark);
+      font-size: 1.12rem;
       line-height: 1.35;
     }
 
     p {
       margin: 0;
-      text-align: justify;
-      color: var(--text-body);
       font-size: 1rem;
-    }
-
-    p + p {
-      margin-top: 14px;
+      text-align: justify;
     }
 
     .footer-note {
       margin-top: 34px;
       padding: 18px 20px;
       border-radius: 18px;
-      background: #f7f4ed;
-      border: 1px solid var(--border);
-      color: var(--muted);
+      background: rgba(79, 111, 82, 0.08);
+      color: var(--primary-dark);
       font-size: 0.95rem;
     }
 
     @media (max-width: 700px) {
       .page {
-        padding: 24px 12px;
+        padding: 24px 14px;
       }
 
-      .header {
-        padding: 30px 24px 24px;
+      .hero {
+        padding: 30px 24px 26px;
       }
 
       .content {
-        padding: 28px 24px 32px;
+        padding: 24px 24px 32px;
       }
 
       .section {
-        padding-left: 20px;
+        padding-left: 22px;
       }
 
       p {
         text-align: left;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .page {
+        padding: 0;
+      }
+
+      .card {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+      }
+
+      .hero {
+        background: #ffffff;
+      }
+
+      .section {
+        break-inside: avoid;
       }
     }
   </style>
@@ -182,112 +199,160 @@
   <main class="page">
     <div class="container">
       <article class="card">
-        <header class="header">
+        <header class="hero">
           <div class="eyebrow">Juridique</div>
           <h1>Politique de confidentialité</h1>
-          <p class="subtitle">Version du 11 mai 2026</p>
+          <p class="subtitle">Version du 12 mai 2026</p>
         </header>
 
         <div class="content">
           <section class="section">
-            <h2>1. Données que nous collectons</h2>
+            <h2>1. Données traitées</h2>
             <p>
-              Nous pouvons collecter les informations de compte telles que l'e-mail, le nom affiché, le prénom, le nom et la date de naissance, vos préférences d'utilisation comme les favoris, le placard et les notifications, ainsi que les données que vous renseignez volontairement dans l'application, notamment les suggestions, signalements, fiches d'établissement et formulaires de revendication d'établissement.
+              Mon Herboriste peut traiter les données de compte et de profil
+              (e-mail, pseudo, prénom, nom, date de naissance, type de compte,
+              entreprise), vos préférences d'usage (favoris, placard,
+              notifications), vos contributions (suggestions, signalements,
+              formulaires, fiches d'établissement, demandes de revendication)
+              ainsi que les photos, la localisation et certaines données
+              techniques nécessaires au fonctionnement de l'application.
             </p>
           </section>
 
           <section class="section">
-            <h2>2. Pourquoi nous traitons ces données</h2>
+            <h2>2. Finalités</h2>
             <p>
-              Ces données servent à créer et sécuriser votre compte, personnaliser les contenus affichés, synchroniser vos informations entre appareils, modérer les contributions, vérifier les demandes de rattachement d'établissement et améliorer la qualité de l'application.
+              Ces traitements servent à créer et sécuriser votre compte,
+              synchroniser vos données entre appareils, afficher des contenus
+              pertinents, permettre les contributions, instruire les demandes de
+              revendication d'établissement, assurer la modération, améliorer la
+              qualité du service et prévenir les incidents techniques.
             </p>
           </section>
 
           <section class="section">
             <h2>3. Revendication d'établissement</h2>
             <p>
-              Lorsqu'un professionnel revendique une fiche d'établissement, nous traitons les informations fournies dans le formulaire de revendication, notamment le nom, le prénom, l'e-mail, le téléphone, la société, la fonction, le SIRET, le message libre et les attestations obligatoires. Ces données sont utilisées uniquement pour instruire la demande, vérifier l'habilitation du demandeur et conserver un historique interne des décisions de modération.
+              Lorsqu'un professionnel revendique une fiche, nous traitons
+              notamment le nom, le prénom, l'e-mail, le téléphone, la société,
+              la fonction, le SIRET, le message libre et les attestations
+              demandées. Ces données sont utilisées uniquement pour vérifier
+              l'habilitation du demandeur, instruire la demande et conserver un
+              historique interne des décisions de modération.
             </p>
           </section>
 
           <section class="section">
-            <h2>4. Partage et hébergement</h2>
+            <h2>4. Prestataires et hébergement</h2>
             <p>
-              Vos données ne sont jamais vendues. Elles peuvent être traitées par nos prestataires techniques strictement nécessaires au fonctionnement du service, notamment pour l'hébergement, l'authentification, les notifications, la sécurité et la mesure technique de l'application.
+              Vos données ne sont pas vendues. Elles peuvent être traitées par
+              nos sous-traitants strictement nécessaires au service. Supabase
+              est utilisé pour l'hébergement applicatif, la base de données,
+              l'authentification et certaines synchronisations. Firebase
+              Analytics est utilisé, avec votre consentement, pour la mesure
+              d'usage sur Android. Sentry est utilisé pour la supervision
+              technique et le diagnostic des erreurs. Ces prestataires agissent
+              pour notre compte dans le cadre du fonctionnement de l'application.
             </p>
           </section>
 
           <section class="section">
-            <h2>5. Localisation et caméra</h2>
+            <h2>5. Localisation</h2>
             <p>
-              L'application Mon Herboriste peut demander l'accès à votre localisation afin de vous proposer des fonctionnalités liées à votre position, comme l'affichage d'établissements, de contenus ou de services proches de vous.
-            </p>
-            <p>
-              L'accès à la localisation n'est utilisé qu'avec votre autorisation. Vous pouvez refuser cet accès ou le désactiver à tout moment depuis les paramètres de votre appareil.
-            </p>
-            <p>
-              L'application peut également demander l'accès à la caméra afin de vous permettre de prendre ou d'ajouter des photos, par exemple pour compléter une fiche, envoyer une suggestion, effectuer un signalement ou illustrer un contenu dans l'application.
-            </p>
-            <p>
-              Les photos prises ou ajoutées depuis l'application ne sont utilisées que pour la fonctionnalité concernée. Elles ne sont pas vendues à des tiers.
+              L'application peut demander l'accès à votre position précise
+              uniquement lorsque vous utilisez une fonctionnalité qui en a
+              besoin, par exemple pour afficher des établissements autour de
+              vous ou faciliter la saisie d'une adresse. Vous pouvez refuser cet
+              accès ou le retirer à tout moment dans les réglages de votre
+              appareil.
             </p>
           </section>
 
           <section class="section">
-            <h2>6. Statistiques d'utilisation anonymes</h2>
+            <h2>6. Photos et bibliothèque</h2>
             <p>
-              Avec votre accord explicite, l'application peut utiliser Firebase Analytics pour mesurer l'usage général de l'application. Ces statistiques servent à comprendre quels écrans et fonctionnalités sont les plus utiles, à suivre l'ouverture de certaines pages et à mieux prioriser les améliorations produit. Nous n'y envoyons ni votre e-mail, ni votre nom, ni le contenu de vos formulaires, ni vos messages libres.
+              L'application peut demander l'accès à votre bibliothèque photo afin
+              d'ajouter une image à votre profil, à une fiche ou à un formulaire.
+              À la date de cette version, Mon Herboriste ne demande pas l'accès à
+              la caméra pour prendre une photo directement depuis l'application.
+              Les images envoyées sont utilisées uniquement pour la fonctionnalité
+              concernée.
             </p>
           </section>
 
           <section class="section">
-            <h2>7. Consentement et désactivation</h2>
+            <h2>7. Mesure d'usage Firebase Analytics</h2>
             <p>
-              Les statistiques d'utilisation anonymes sont désactivées par défaut tant que vous n'avez pas donné votre accord. Vous pouvez accepter ou refuser ce suivi lors de l'inscription, via la fenêtre de consentement affichée aux utilisateurs invités, puis modifier ce choix à tout moment dans Réglages &gt; Confidentialité.
+              Sur Android, et uniquement avec votre accord explicite, Mon
+              Herboriste peut transmettre à Firebase Analytics des données de
+              mesure d'usage afin de comprendre les écrans et fonctionnalités les
+              plus utiles. Ces données peuvent inclure des identifiants d'appareil
+              ou d'application, dont l'Advertising ID Android, ainsi que des
+              informations techniques liées à l'usage. Cette mesure sert à
+              l'amélioration du produit uniquement. Nous n'activons pas la
+              personnalisation publicitaire et nous n'y envoyons ni votre e-mail,
+              ni votre nom, ni le contenu libre de vos formulaires ou messages.
             </p>
           </section>
 
           <section class="section">
-            <h2>8. Durée de conservation</h2>
+            <h2>8. Consentement et retrait</h2>
             <p>
-              Les données sont conservées pendant la durée d'utilisation du compte, puis supprimées ou anonymisées selon les obligations légales et les besoins de sécurité. Les données de revendication peuvent être conservées plus longtemps lorsqu'elles sont nécessaires à la preuve de la décision de modération ou à la gestion d'un litige.
+              La mesure d'usage Firebase Analytics est désactivée par défaut tant
+              que vous n'avez pas donné votre consentement. Ce choix est
+              facultatif, distinct des permissions Android et peut être retiré à
+              tout moment dans Réglages &gt; Confidentialité. En cas de refus ou
+              de retrait, la collecte analytics reste désactivée pour cette
+              finalité dans l'application.
             </p>
           </section>
 
           <section class="section">
-            <h2>9. Vos droits</h2>
+            <h2>9. Supervision technique Sentry</h2>
             <p>
-              Vous pouvez demander l'accès, la rectification, la suppression ou la limitation du traitement de vos données personnelles. Pour exercer vos droits, utilisez le formulaire de contact dans l'application.
+              Pour détecter, comprendre et corriger les erreurs techniques,
+              l'application peut transmettre à Sentry des diagnostics comme des
+              crash logs, des informations de version, d'environnement, de route
+              ou d'état réseau. Lorsque cela est nécessaire, ces événements sont
+              rattachés à un identifiant pseudonyme. Nous n'y transmettons pas
+              directement votre e-mail, votre pseudo, votre nom ou le contenu
+              libre de vos formulaires au titre de cette supervision.
             </p>
           </section>
 
           <section class="section">
-            <h2>10. Sécurité des données</h2>
+            <h2>10. Conservation, suppression et droits</h2>
             <p>
-              Nous mettons en place des mesures raisonnables pour protéger vos données contre l'accès non autorisé, la perte, la modification ou la divulgation.
+              Les données sont conservées pendant la durée nécessaire au
+              fonctionnement du compte et des services associés, puis supprimées
+              ou archivées selon les obligations légales, la sécurité et la
+              gestion des litiges. Certaines données de revendication peuvent
+              être conservées plus longtemps lorsqu'elles sont nécessaires à la
+              preuve d'une décision de modération. Vous pouvez demander l'accès,
+              la rectification, la suppression ou la limitation du traitement de
+              vos données, notamment via les mécanismes de suppression de compte
+              et les formulaires de contact mis à votre disposition.
             </p>
           </section>
 
           <section class="section">
-            <h2>11. Services tiers</h2>
+            <h2>11. Sécurité, contact et mises à jour</h2>
             <p>
-              L'application peut utiliser des services tiers nécessaires à son bon fonctionnement, par exemple pour l'hébergement, l'authentification, les notifications, la sécurité, la supervision technique et les statistiques d'utilisation anonymes. Ces services peuvent traiter certaines données conformément à leurs propres politiques de confidentialité.
+              Nous mettons en place des mesures raisonnables de sécurité pour
+              protéger vos données contre l'accès non autorisé, la perte, la
+              modification ou la divulgation. Pour toute question relative à cette
+              politique ou pour exercer vos droits, vous pouvez utiliser les
+              moyens de contact mis à disposition dans l'application et sur nos
+              pages publiques. Cette politique peut évoluer ; la date de version
+              sera mise à jour en conséquence.
             </p>
           </section>
 
-          <section class="section">
-            <h2>12. Contact</h2>
-            <p>
-              Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits, vous pouvez nous contacter via le formulaire de contact disponible dans l'application.
-            </p>
-          </section>
-
-          <section class="section">
-            <h2>13. Modifications</h2>
-            <p>
-              Cette politique de confidentialité peut être mise à jour à tout moment. La date de version sera modifiée en conséquence.
-            </p>
-          </section>
+          <div class="footer-note">
+            Cette page présente la politique de confidentialité de Mon Herboriste.
+            Elle peut être intégrée telle quelle dans une page web, une WebView ou
+            une page publique liée depuis l'application.
+          </div>
         </div>
       </article>
     </div>
